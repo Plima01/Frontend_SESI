@@ -1,0 +1,9 @@
+body{
+    background-color: #121212;
+    color: #fffff1;
+    font-family: 'Segoe UI',sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+}
