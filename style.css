@@ -1,9 +1,46 @@
 body{
-    background-color: #121212;
-    color: #fffff1;
+    background-color: #49a4ff9c;
+    color: #e6f8ff;
     font-family: 'Segoe UI',sans-serif;
     display: flex;
     justify-content: center;
     padding: 20px;
+    background: linear-gradient(130deg, #0a1e3f 1%, #1a3a52 25%, #0d2a4a 50%, #1a1f4a 75%, #0f1f3f 110%);
+    background-attachment: fixed;
 
+}
+.container{
+    width: 400px;
+    background-color: #100f29cc;
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+}
+
+h3{
+    color:#00d4ff;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+}
+
+.card{
+    background: #252525;
+}
+
+button{
+    width: 100%;
+    padding: 15px;
+    color: #ffffff;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(100deg, #4aaf59, #0f641d);
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    background: linear-gradient(100deg, #259638, #287434, #0a7b1c);
 }
