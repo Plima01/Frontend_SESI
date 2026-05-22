@@ -1,21 +1,21 @@
 body {
     background-color: #49a4ff9c;
     color: #e6f8ff;
-    font-family: 'Segoe UI',sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     padding: 20px;
-    background: linear-gradient(130deg, #0a1e3f 1%, #1a3a52 25%, #0d2a4a 50%, #1a1f4a 75%, #0f1f3f 110%);
+    background: linear-gradient(130deg, #0a1e3f 1%, #1a3a52 25%, #0d2a4a 50%, #1a3a52 75%, #0f1f3f 110%);
     background-attachment: fixed;
 
 }
 
 .container {
-     width: 400px;
+    width: 400px;
     background-color: #100f29cc;
     padding: 20px;
-    border-radius: 10px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid #333;
 }
 
@@ -47,7 +47,7 @@ button {
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s ease;
-    
+
 }
 
 button:hover {
@@ -64,7 +64,8 @@ li {
     color: #ccc;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
