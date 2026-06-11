@@ -1,40 +1,96 @@
+:root {
+    /* Tema Claro */
+    --bg: #49a4ff9c;
+    --bg-gradient: linear-gradient(
+        130deg,
+        #bebebe 1%,
+        #cecece 25%,
+        #656363 50%,
+        #9f9f9f 75%,
+        #e3e3e3 110%
+    );
+
+    --text: #1a1a1a;
+    --container: #ffffffcc;
+    --card: #f0f0f0;
+
+    --title: #242424;
+    --subtitle: #ffffff;
+
+    --border: #535353;
+    --input-bg: #929292;
+    --input-text: #333232;
+
+    --button-gradient: linear-gradient(100deg, #434443, #2a2c2b);
+}
+
+.dark {
+    /* Tema Escuro */
+    --bg: #49a4ff9c;
+    --bg-gradient: linear-gradient(
+        130deg,
+        #0a1e3f 1%,
+        #1a3a52 25%,
+        #0d2a4a 50%,
+        #1a3a52 75%,
+        #0f1f3f 110%
+    );
+
+    --text: #e6f8ff;
+    --container: #100f29cc;
+    --card: #252525;
+
+    --title: #00ff88;
+    --subtitle: #00d4ff;
+
+    --border: #333;
+    --input-bg: #252525;
+    --input-text: #ffffff;
+
+    --button-gradient: linear-gradient(100deg, #4aaf59, #00cc6e);
+}
+
 body {
-    background-color: #49a4ff9c;
-    color: #e6f8ff;
+    background-color: var(--bg);
+    color: var(--text);
     font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     padding: 20px;
-    background: linear-gradient(130deg, #0a1e3f 1%, #1a3a52 25%, #0d2a4a 50%, #1a3a52 75%, #0f1f3f 110%);
+    background: var(--bg-gradient);
     background-attachment: fixed;
-
+    transition: 0.3s ease;
 }
 
 .container {
-    width: 400px;
-    background-color: #100f29cc;
+    width: 600px;
+    background-color: var(--container);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 1px solid #333;
+    border: 1px solid var(--border);
+    font-size: 25px;
+    transition: 0.3s ease;
 }
 
 h1 {
-    color: #00ff88;
+    color: var(--title);
     text-align: center;
+
 }
 
 h3 {
-    color: #00d4ff;
-    border-bottom: 1px solid #333;
+    color: var(--subtitle);
+    border-bottom: 1px solid var(--border);
     padding-bottom: 5px;
 }
 
 .card {
-    background: #252525;
+    background: var(--card);
     padding: 15px;
     border-radius: 5px;
-    border-left: 5px solid #00ff88;
+    border-left: 5px solid var(--title);
+    transition: 0.3s ease;
 }
 
 button {
@@ -43,15 +99,14 @@ button {
     margin-top: 20px;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(100deg, #4aaf59, #00cc6e);
+    background: var(--button-gradient);
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s ease;
-
 }
 
 button:hover {
-    background-color: #00cc6e;
+    transform: scale(1.02);
 }
 
 ul {
@@ -61,7 +116,7 @@ ul {
 
 li {
     padding: 5px 0;
-    color: #ccc;
+    color: var(--text);
 }
 
 input,
@@ -70,14 +125,21 @@ select {
     padding: 10px;
     margin: 8px 0;
     border-radius: 5px;
-    border: 1px solid #444;
-    background-color: #252525;
-    color: white;
+    border: 1px solid var(--border);
+    background-color: var(--input-bg);
+    color: var(--input-text);
     box-sizing: border-box;
+    transition: 0.3s ease;
 }
 
 hr {
     border: 0;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border);
     margin: 20px 0;
+}
+
+input::placeholder {
+    font-size: 20px;
+    text-shadow: 0 0 5px #8f8f8f1a;
+    color: var(--input-text);
 }

@@ -1,6 +1,6 @@
 function executarSistema() {
-    try {
 
+    try {
         // Dados de entrada
         const inputNome = document.getElementById("inputNome");
         const inputIdade = document.getElementById("inputIdade");
@@ -14,23 +14,18 @@ function executarSistema() {
 
         const btn = document.getElementById("btnFinalizar");
 
-        btn.disale = true;
-        btn.innerText = "processando...";
+        btn.disable = true;
+        btn.innerText = "Processando...";
 
-        const nome = inputNome.value.trin();
+        // trim() remove os espaços em branco
+        const nome = inputNome.value.trim();
         const idade = parseInt(inputIdade.value);
         const valor = parseFloat(inputValor.value);
         const cupom = inputCupom.value === "true";
 
-
-        // Verifica se os elementos existem no DOM
-        if (!msg || !lista || !relatorio) {
-            alert("Erro: elementos de saída não encontrados.");
-            return;
-        }
         // Validação para campos vazios
         if (!nome || isNaN(idade) || isNaN(valor)) {
-            msg.innerText = "preencha todos os campos corretamente!";
+            msg.innerText = "Preencha todos os campos corretamente!";
             msg.style.color = "#ff4444";
             return;
         }
@@ -47,25 +42,43 @@ function executarSistema() {
             let estoque = ["Placa de Vídeo", "Processador", "Memória RAM"];
             lista.innerHTML = ""; // Limpa a lista anterior
 
+            // forEach: Percorre um array e aplica uma ação para cada elemento
             estoque.forEach(item => {
-                const li = document.createElement("li");
-                li.innerText = `item ${item} reservado`;
-                lista.appendChild(li);
+                let li = document.createElement("li");
+                li.innerText = `Item ${item} reservado.`;
+                lista.appendChild(li); // usado para adicionar um novo elemento ou texto
             });
+
+            // Relatório
             relatorio.style.display = "block";
             relatorio.innerHTML = `
-            <strong>Relatório de Venda:</strong><br>
-            Cliente: ${nome}<br>
-            total original: R$ ${valor.toFixed(2)}<br>
-            <strong>Valor final: R$ ${valorFinal.toFixed(2)}<strong>
+            <strong> RESUMO DO PEDIDO <\strong><br>
+            Cliente: ${nome} <br>
+            Total Original: R$ ${valor.toFixed(2)} <br>
+            <strong> Total com Desconto: R$ ${valorFinal.toFixed(2)} <\strong>
         `;
         } else {
-            msg.innerText = `Venda não autorizada: ${nome} (idade insuficiente)`;
+            msg.innerText = "Venda bloqueada: Menor de 16 anos.";
             msg.style.color = "#ff4444";
-            lista.innerHTML = "";
             relatorio.style.display = "none";
+            lista.innerHTML = "";
         }
     } catch (error) {
 
     }
 }
+
+function alterarTema() {
+        const btn = document.getElementById("tema-btn");
+
+        btn.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+                btn.textContent = "Light Mode";
+            } else {
+                btn.textContent = "Dark Mode";
+            }
+        });
+    }
+

@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechStore SESI</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    
+    
+    
     <div class="container">
-        <h1> TechStore </h1>
+        <button id="tema-btn" onclick="alterarTema()">Dark Mode</button>
+        <h1>TechStore SESI</h1>
 
         <section class="formulario">
-            <h1> Dados de Venda </h1>
+            
+            <h1>Dados da Venda</h1>
             <label for="inputNome">Nome do cliente</label>
-            <input type="text" id="inputNome" placeholder="nome do clinte" required autocomplete="name">
+            <input type="text" id="inputNome" placeholder="Nome do cliente" required autocomplete="name">
 
-            <label for="inputIdade">idade</label>
-            <input type="number" id="inputIdade" placeholder=" idade do cliente" min="0" required>
+            <label for="inputIdade">Idade</label>
+            <input type="number" id="inputIdade" placeholder="Idade do cliente" min="0" required>
 
-            <label for="inputValor"></label>
-            <input type="number" id="inputValor" placeholder="valor total:" min="0" step="0.01" required>
+            <label for="inputValor">Valor Total</label>
+            <input type="number" id="inputValor" placeholder="Valor Total (R$)" min="0" step="0.01" required>
 
-            <label for="inputCupom"></label>
+            <label for="inputCupom">Cupom</label>
             <select id="inputCupom">
-                <option value="false"> Voce nao possui cupom </option>
-                <option value="true"> Voce possui cupom (15% OFF) </option>
-
-
-
+                <option value="false">Não possui cupom</option>
+                <option value="true">Possui cupom (15% OFF)</option>
             </select>
-            <button id="btnFinalizar" onclick="executarSistema()"> Finalizar venda</button>
+
+            <button id="btnFinalizar" onclick="executarSistema()">Finalizar Venda</button>
         </section>
 
         <hr>
 
         <section id="feedback">
-            
+            <p id="mensagem-autorizacao">Preencha os dados acima.</p>
             <ul id="lista-estoque"></ul>
             <div id="relatorio-final" class="card" style="display: none;">
-
+            <label>Valor Total</label>
             </div>
-
         </section>
-
     </div>
-    <script src="script.js"></script>
+    <script src="script.js">
+        
 
+    </script>
 </body>
-
 </html>
