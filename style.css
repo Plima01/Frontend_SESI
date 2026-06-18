@@ -3,25 +3,25 @@
     --bg: #49a4ff9c;
     --bg-gradient: linear-gradient(
         130deg,
-        #bebebe 1%,
-        #cecece 25%,
-        #656363 50%,
-        #9f9f9f 75%,
-        #e3e3e3 110%
+        #cccccc 1%,
+        #eaeaea 25%,
+        #f6ecec 50%,
+        #ffffff 75%,
+        #eaeaea 100%
     );
 
-    --text: #1a1a1a;
+    --text: #000000;
     --container: #ffffffcc;
     --card: #f0f0f0;
-
-    --title: #242424;
-    --subtitle: #ffffff;
+    --font-size: 16px;
+    --title: #000000;
+    --subtitle: #000000;
 
     --border: #535353;
     --input-bg: #929292;
-    --input-text: #333232;
+    --input-text: #000000;
 
-    --button-gradient: linear-gradient(100deg, #434443, #2a2c2b);
+    --button-gradient: linear-gradient(100deg, #181818, #2a2c2b);
 }
 
 .dark {
@@ -51,6 +51,7 @@
 }
 
 body {
+
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Segoe UI', sans-serif;
@@ -60,6 +61,7 @@ body {
     background: var(--bg-gradient);
     background-attachment: fixed;
     transition: 0.3s ease;
+    font-size: var(--font-size);
 }
 
 .container {
@@ -103,6 +105,9 @@ button {
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 15px rgba(185, 185, 185, 0.3);
+    font-size: 18px;
 }
 
 button:hover {
@@ -142,4 +147,89 @@ input::placeholder {
     font-size: 20px;
     text-shadow: 0 0 5px #8f8f8f1a;
     color: var(--input-text);
+}
+/* BOTÃO DE TEMA */
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.theme-switch label {
+    width: 130px;
+    height: 45px;
+    display: block;
+    background: #ddd;
+    border: 2px solid #000000;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Texto OFF */
+.theme-switch label::before {
+    content: "Claro";
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+}
+
+/* Bolinha */
+.theme-switch label::after {
+    content: "";
+    width: 37px;
+    height: 37px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3.5px;
+    left: 6px;
+    transition: all 0.8s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+
+/* Ligado */
+.theme-switch input:checked + label {
+    background: linear-gradient(90deg, #0d2a4a, #0f1f3f);
+}
+
+.theme-switch input:checked + label::after {
+    left: 87px;
+}
+
+.theme-switch input:checked + label::before {
+    content: "Escuro";
+    left: 7px;
+    right: auto;
+    color: white;
+}
+.font-controls {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 10px;
+    background: var(--container);
+    border: 1px solid var(--border);
+    z-index: 1000;
+}
+
+.font-controls button {
+    width: 45px !important;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 18px;
 }

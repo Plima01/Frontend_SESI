@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    
+    <div class="font-controls">
+    <button type="button" onclick="alterarZoom(-10)">A-</button>
+    <button type="button" onclick="alterarZoom(10)">A+</button>
+</div>
+    <div class="theme-switch">
+    <input type="checkbox" id="tema-toggle" onchange="alterarTema()">
+    <label for="tema-toggle"></label>
+</div>
     
     <div class="container">
-        <button id="tema-btn" onclick="alterarTema()">Dark Mode</button>
-        <h1>TechStore SESI</h1>
 
         <section class="formulario">
             
