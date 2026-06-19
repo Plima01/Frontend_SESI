@@ -131,5 +131,9 @@ let zoomAtual = 100;
 
 function alterarZoom(valor) {
     zoomAtual += valor;
-    document.body.style.zoom = zoomAtual + "%";
+
+    if (zoomAtual < 80) zoomAtual = 80;
+    if (zoomAtual > 150) zoomAtual = 150;
+
+    document.querySelector(".container").style.zoom = zoomAtual + "%";
 }
