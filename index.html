@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechStore SESI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="font-controls">
-    <button type="button" onclick="alterarZoom(-10)">A-</button>
-    <button type="button" onclick="alterarZoom(10)">A+</button>
+
+    <header class="topbar">
+
+    <div class="topbar-logo">
+        TechStore SESI
+    </div>
+
+    <div class="topbar-actions">
+
+        <div class="font-controls">
+    <button type="button" onclick="alterarZoom(-10)" title="Diminuir fonte">
+        <span>🔍</span>−
+    </button>
+
+    <button type="button" onclick="alterarZoom(10)" title="Aumentar fonte">
+        <span>🔍</span>+
+    </button>
 </div>
-    <div class="theme-switch">
-    <input type="checkbox" id="tema-toggle" onchange="alterarTema()">
-    <label for="tema-toggle"></label>
-</div>
+
+        <div class="theme-switch">
+            <input type="checkbox" id="tema-toggle" onchange="alterarTema()">
+            <label for="tema-toggle"></label>
+        </div>
+
+    </div>
+
+</header>
     
     <div class="container">
 
