@@ -1,40 +1,36 @@
 :root {
     /* Tema Claro */
-    --bg: #49a4ff9c;
-    --bg-gradient: linear-gradient(
-        130deg,
-        #cccccc 1%,
-        #eaeaea 25%,
-        #f6ecec 50%,
-        #ffffff 75%,
-        #eaeaea 100%
-    );
+    --bg-gradient: linear-gradient(130deg,
+            #0051ff4e,
+            #0066ff49,
+            #4c00ff62,
+            #001aff41);
+    --Shadow: 0 4px 15px rgba(0, 139, 252, 0.3);
+    --text: #0f172a;
+    --container: #ffffffd9;
+    --card: #f8fafc;
 
-    --text: #000000;
-    --container: #ffffffcc;
-    --card: #f0f0f0;
-    --font-size: 16px;
-    --title: #000000;
-    --subtitle: #000000;
+    --title: #5d25eb;
+    --subtitle: #733bf6;
 
-    --border: #535353;
-    --input-bg: #929292;
-    --input-text: #000000;
+    --border: #cbd5e1;
+    --input-bg: #ffffff;
+    --input-text: #0f172a;
 
-    --button-gradient: linear-gradient(100deg, #181818, #2a2c2b);
+    --button-gradient: linear-gradient(100deg,
+            #8125eb,
+            #3b48f6);
 }
 
 .dark {
     /* Tema Escuro */
     --bg: #49a4ff9c;
-    --bg-gradient: linear-gradient(
-        130deg,
-        #0a1e3f 1%,
-        #1a3a52 25%,
-        #0d2a4a 50%,
-        #1a3a52 75%,
-        #0f1f3f 110%
-    );
+    --bg-gradient: linear-gradient(130deg,
+            #0a1e3f 1%,
+            #1a3a52 25%,
+            #0d2a4a 50%,
+            #1a3a52 75%,
+            #0f1f3f 110%);
 
     --text: #e6f8ff;
     --container: #100f29cc;
@@ -65,14 +61,17 @@ body {
 }
 
 .container {
-    width: 600px;
+    width: 400px;
+    height: auto;
     background-color: var(--container);
     padding: 20px;
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid var(--border);
-    font-size: 25px;
+    font-size: 16px;
     transition: 0.3s ease;
+    margin-top: 80px;
 }
 
 h1 {
@@ -89,7 +88,7 @@ h3 {
 
 .card {
     background: var(--card);
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
     border-left: 5px solid var(--title);
     transition: 0.3s ease;
@@ -106,8 +105,8 @@ button {
     font-weight: bold;
     transition: 0.3s ease;
     color: white;
-    box-shadow: 0 4px 15px rgba(185, 185, 185, 0.3);
     font-size: 18px;
+    box-shadow: var(--Shadow)
 }
 
 button:hover {
@@ -144,17 +143,12 @@ hr {
 }
 
 input::placeholder {
-    font-size: 20px;
+    font-size: 14px;
     text-shadow: 0 0 5px #8f8f8f1a;
     color: var(--input-text);
 }
+
 /* BOTÃO DE TEMA */
-.theme-switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
 
 .theme-switch input {
     display: none;
@@ -194,26 +188,27 @@ input::placeholder {
     top: 3.5px;
     left: 6px;
     transition: all 0.8s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
 }
 
 /* Ligado */
-.theme-switch input:checked + label {
+.theme-switch input:checked+label {
     background: linear-gradient(90deg, #0d2a4a, #0f1f3f);
 }
 
-.theme-switch input:checked + label::after {
+.theme-switch input:checked+label::after {
     left: 87px;
 }
 
-.theme-switch input:checked + label::before {
+.theme-switch input:checked+label::before {
     content: "Escuro";
     left: 7px;
     right: auto;
     color: white;
 }
+
 .font-controls {
-    position: fixed;
+    
     top: 80px;
     right: 20px;
     display: flex;
@@ -226,10 +221,53 @@ input::placeholder {
 }
 
 .font-controls button {
-    width: 45px !important;
-    height: 45px;
-    margin: 0;
-    padding: 0;
-    border-radius: 50%;
-    font-size: 18px;
+    all: unset;
+
+    cursor: pointer;
+
+    font-size: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--title);
+
+    transition: 0.2s;
+}
+
+.font-controls button:hover {
+    transform: scale(1.1);
+}
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background: var(--container);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--border);
+    font-size: 16px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.topbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--title);
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
