@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechStore SESI</title>
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header class="topbar">
+<header class="topbar">
 
     <div class="topbar-logo">
         TechStore SESI
@@ -18,60 +23,91 @@
     <div class="topbar-actions">
 
         <div class="font-controls">
-    <button type="button" onclick="alterarZoom(-10)" title="Diminuir fonte">
-        <span>🔍</span>−
-    </button>
 
-    <button type="button" onclick="alterarZoom(10)" title="Aumentar fonte">
-        <span>🔍</span>+
-    </button>
-</div>
+            <button type="button" onclick="alterarZoom(-10)" title="Diminuir fonte">
+                <span class="material-symbols-outlined">zoom_out</span>
+            </button>
 
-        <div class="theme-switch">
-            <input type="checkbox" id="tema-toggle" onchange="alterarTema()">
-            <label for="tema-toggle"></label>
+            <button type="button" onclick="alterarZoom(10)" title="Aumentar fonte">
+                <span class="material-symbols-outlined">zoom_in</span>
+            </button>
+
         </div>
 
-    </div>
+
+        <div class="theme-switch">
+
+            <input type="checkbox" id="tema-toggle" onchange="alterarTema()">
+        
+            <label for="tema-toggle">
+                <span id="icone-tema" class="material-symbols-outlined">
+                    light_mode
+                </span>
+            </label>
+        
+        </div>
 
 </header>
-    
-    <div class="container">
 
-        <section class="formulario">
-            
-            <h1>Dados da Venda</h1>
-            <label for="inputNome">Nome do cliente</label>
-            <input type="text" id="inputNome" placeholder="Nome do cliente" required autocomplete="name">
 
-            <label for="inputIdade">Idade</label>
-            <input type="number" id="inputIdade" placeholder="Idade do cliente" min="0" required>
+<div class="container">
 
-            <label for="inputValor">Valor Total</label>
-            <input type="number" id="inputValor" placeholder="Valor Total (R$)" min="0" step="0.01" required>
-
-            <label for="inputCupom">Cupom</label>
-            <select id="inputCupom">
-                <option value="false">Não possui cupom</option>
-                <option value="true">Possui cupom (15% OFF)</option>
-            </select>
-
-            <button id="btnFinalizar" onclick="executarSistema()">Finalizar Venda</button>
-        </section>
-
-        <hr>
-
-        <section id="feedback">
-            <p id="mensagem-autorizacao">Preencha os dados acima.</p>
-            <ul id="lista-estoque"></ul>
-            <div id="relatorio-final" class="card" style="display: none;">
-            <label>Valor Total</label>
-            </div>
-        </section>
-    </div>
-    <script src="script.js">
+    <section class="formulario">
         
+        <h1>Dados da Venda</h1>
 
-    </script>
+        <label for="inputNome">Nome do cliente</label>
+        <input type="text" id="inputNome" placeholder="Nome do cliente" required autocomplete="name">
+
+
+        <label for="inputIdade">Idade</label>
+        <input type="number" id="inputIdade" placeholder="Idade do cliente" min="0" required>
+
+
+        <label for="inputValor">Valor Total</label>
+        <input type="number" id="inputValor" placeholder="Valor Total (R$)" min="0" step="0.01" required>
+
+
+        <label for="inputCupom">Cupom</label>
+
+        <select id="inputCupom">
+            <option value="false">Não possui cupom</option>
+            <option value="true">Possui cupom (15% OFF)</option>
+        </select>
+
+
+        <button id="btnFinalizar" onclick="executarSistema()">
+            Finalizar Venda
+        </button>
+
+    </section>
+
+
+    <hr>
+
+
+    <section id="feedback">
+
+        <p id="mensagem-autorizacao">
+            Preencha os dados acima.
+        </p>
+
+        <ul id="lista-estoque"></ul>
+
+
+        <div id="relatorio-final" class="card" style="display: none;">
+            <label>Valor Total</label>
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+
 </body>
 </html>

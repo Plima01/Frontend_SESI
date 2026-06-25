@@ -15,54 +15,69 @@ function executarSistema() {
 
         const btn = document.getElementById("btnFinalizar");
 
+
         btn.disabled = true;
         btn.innerText = "Processando...";
+
 
         const nome = inputNome.value.trim();
         const idade = parseInt(inputIdade.value);
         const valor = parseFloat(inputValor.value);
         const cupom = inputCupom.value === "true";
 
+
         // Validação
         if (!nome || isNaN(idade) || isNaN(valor)) {
+
             msg.innerText = "Preencha todos os campos corretamente!";
             msg.style.color = "#ff4444";
 
             btn.disabled = false;
             btn.innerText = "Finalizar Venda";
+
             return;
         }
+
 
         // Regra de negócio
         if (idade >= 16) {
 
+
             msg.innerText = `Venda autorizada: ${nome}`;
             msg.style.color = "#00ff88";
 
-            // Desconto
+
             let valorFinal = (valor > 500 || cupom)
                 ? valor * 0.85
                 : valor;
 
-            // Estoque
+
             let estoque = [
                 "Placa de Vídeo",
                 "Processador",
                 "Memória RAM"
             ];
 
+
             lista.innerHTML = "";
 
+
             estoque.forEach(item => {
+
                 const li = document.createElement("li");
+
                 li.innerText = `Item ${item} reservado.`;
+
                 lista.appendChild(li);
+
             });
 
-            // Relatório
+
             relatorio.style.display = "block";
 
+
             relatorio.innerHTML = `
+
                 <strong>RESUMO DO PEDIDO</strong><br><br>
 
                 Cliente: ${nome}<br>
@@ -73,67 +88,153 @@ function executarSistema() {
                 <strong>
                     Total com Desconto: R$ ${valorFinal.toFixed(2)}
                 </strong>
+
             `;
+
 
         } else {
 
+
             msg.innerText = "Venda bloqueada: Menor de 16 anos.";
+
             msg.style.color = "#ff4444";
 
             relatorio.style.display = "none";
+
             lista.innerHTML = "";
+
         }
+
+
 
     } catch (error) {
 
+
         console.error(error);
+
 
         document.getElementById("mensagem-autorizacao").innerText =
             "Ocorreu um erro ao processar a venda.";
 
+
     } finally {
+
 
         const btn = document.getElementById("btnFinalizar");
 
         btn.disabled = false;
+
         btn.innerText = "Finalizar Venda";
+
     }
+
 }
 
 
-// ALTERAR TEMA
+
+// ALTERAR TEMA COM ÍCONE
+
 function alterarTema() {
+
 
     document.body.classList.toggle("dark");
 
+
     const toggle = document.getElementById("tema-toggle");
 
+    const icone = document.getElementById("icone-tema");
+
+
+
     if (document.body.classList.contains("dark")) {
+
+
         toggle.checked = true;
+
+
+        if (icone) {
+
+            icone.textContent = "dark_mode";
+
+        }
+
+
+
     } else {
+
+
         toggle.checked = false;
+
+
+        if (icone) {
+
+            icone.textContent = "light_mode";
+
+        }
+
+
     }
+
 }
 
 
+
 // Inicia em modo escuro
+
 window.onload = () => {
+
 
     document.body.classList.add("dark");
 
+
     const toggle = document.getElementById("tema-toggle");
 
+    const icone = document.getElementById("icone-tema");
+
+
+
     if (toggle) {
+
         toggle.checked = true;
+
     }
+
+
+    if (icone) {
+
+        icone.textContent = "dark_mode";
+
+    }
+
+
 };
+
+
+
+
+// ZOOM
+
 let zoomAtual = 100;
 
+
 function alterarZoom(valor) {
+
+
     zoomAtual += valor;
 
-    if (zoomAtual < 80) zoomAtual = 80;
-    if (zoomAtual > 150) zoomAtual = 150;
+
+    if (zoomAtual < 80)
+
+        zoomAtual = 80;
+
+
+    if (zoomAtual > 150)
+
+        zoomAtual = 150;
+
+
 
     document.querySelector(".container").style.zoom = zoomAtual + "%";
+
+
 }
