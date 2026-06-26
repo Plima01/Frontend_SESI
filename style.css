@@ -21,23 +21,25 @@
             #8125eb,
             #3b48f6);
 }
-.material-symbols-outlined
- {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
+
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
 .dark {
-    /* Tema Escuro */
+
     --bg: #49a4ff9c;
     --bg-gradient: linear-gradient(130deg,
             #0a1e3f 1%,
@@ -49,10 +51,9 @@
     --text: #e6f8ff;
     --container: #100f29cc;
     --card: #252525;
-
+    
     --title: #00ff88;
     --subtitle: #00d4ff;
-
     --border: #333;
     --input-bg: #252525;
     --input-text: #ffffff;
@@ -162,22 +163,19 @@ input::placeholder {
     color: var(--input-text);
 }
 
-/* BOTÃO DE TEMA */
 
-/* ÍCONES MATERIAL SYMBOLS */
 
 .material-symbols-outlined {
     font-size: 26px;
 
     font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24;
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
 }
 
 
-/* BOTÃO DE TEMA COM ÍCONE */
 
 .theme-switch input {
     display: none;
@@ -206,7 +204,6 @@ input::placeholder {
 }
 
 
-/* Ícone claro */
 .theme-switch label .material-symbols-outlined {
 
     color: #000;
@@ -214,22 +211,23 @@ input::placeholder {
 }
 
 
-/* Tema escuro ativado */
 
-.theme-switch input:checked + label {
+
+.theme-switch input:checked+label {
 
     background: linear-gradient(90deg, #0d2a4a, #0f1f3f);
 
 }
 
 
-.theme-switch input:checked + label .material-symbols-outlined {
+.theme-switch input:checked+label .material-symbols-outlined {
 
     color: white;
 
 }
+
 .font-controls {
-    
+
     top: 80px;
     right: 20px;
     display: flex;
@@ -260,6 +258,7 @@ input::placeholder {
 .font-controls button:hover {
     transform: scale(1.1);
 }
+
 .topbar {
     position: fixed;
     top: 0;

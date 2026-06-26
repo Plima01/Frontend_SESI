@@ -132,8 +132,6 @@ function executarSistema() {
 
 
 
-// ALTERAR TEMA COM ÍCONE
-
 function alterarTema() {
 
 
@@ -179,7 +177,7 @@ function alterarTema() {
 
 
 
-// Inicia em modo escuro
+
 
 window.onload = () => {
 
@@ -209,11 +207,6 @@ window.onload = () => {
 
 };
 
-
-
-
-// ZOOM
-
 let zoomAtual = 100;
 
 
@@ -223,14 +216,14 @@ function alterarZoom(valor) {
     zoomAtual += valor;
 
 
-    if (zoomAtual < 80)
+    if (zoomAtual < 70)
 
-        zoomAtual = 80;
+        zoomAtual = 70;
 
 
-    if (zoomAtual > 150)
+    if (zoomAtual > 280)
 
-        zoomAtual = 150;
+        zoomAtual = 280;
 
 
 
